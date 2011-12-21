@@ -136,8 +136,11 @@ Ventajas y Desventajas de los Modelos Raster
   * Consiste en operaciones matemáticas básicas entre celdas de diferentes rasters.
 
 * Por ejemplo:
+
   * Pendientes fuertes = Pendiente > 15
- 
+
+.. image:: images/slope.png
+
 Problemas de Representación
 ---------------------------
 
@@ -164,11 +167,12 @@ Cubic Convolution
 Generalizes bilinear interpolation.  The sixteen blue cells surrounding each yellow cell determine the interpolated value.  
 
 Remuestreo en Spatial Analyst
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=============================
 
 Spatial Analyst es una extensión de ArcGIS Desktop que se utiliza para análisis raster.
 
 Cuidados que se deben tener al realizar análisis con Spatial Analyst
+--------------------------------------------------------------------
 
 Distinción de Rasters de Tipo Entero y Real
 
@@ -180,7 +184,9 @@ Entero:
 Reales (decimales)
  
 7.1.2	Operaciones entre Enteros y Reales
+
 7.1.2.1	Multiplicación
+
 dem_clip3 * 1.25 = rastercalc2
 Donde:
 dem_clip3: continuous, signed integer, 16bits
