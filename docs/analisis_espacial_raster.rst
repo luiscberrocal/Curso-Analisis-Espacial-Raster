@@ -131,7 +131,7 @@ Ventajas y Desventajas de los Modelos Raster
 
 * Algebra de mapas
 
-  * Propuesta a principios de los ‘80s por el Dr. Dana Tomlin. 
+  * Propuesta a principios de los ‘80s por el Dr. Dana Tomlin [#]_. 
 
   * Consiste en operaciones matemáticas básicas entre celdas de diferentes rasters.
 
@@ -141,8 +141,19 @@ Ventajas y Desventajas de los Modelos Raster
 
 .. image:: images/slope.png
 
+.. [#] http://www.quantdec.com/SYSEN597/GTKAV/section9/map_algebra.htm
+
 Problemas de Representación
 ---------------------------
+
+.. image:: images/grid_01.gif
+
+.. image:: images/grid_02.gif
+
+.. image:: images/grid_03.gif
+
+.. image:: images/grid_04.gif
+
 
 Que ocurre cuando se realizan operaciones entre temas Raster que tienen diferentes tamaños de celdas.
    
@@ -175,22 +186,35 @@ Cuidados que se deben tener al realizar análisis con Spatial Analyst
 --------------------------------------------------------------------
 
 Distinción de Rasters de Tipo Entero y Real
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Los rasters enteros se muestran como Pixel Type Unsigned Integer o Signed Integer. Los valores reales (con decimales) se muestran con  Pixel Type Floating Point.
+
 Entero:
- 
+
+.. image:: images/signed_int.png
+
+
+
+.. image:: images/unsigned_int.png
  
 
 Reales (decimales)
+
+.. image:: images/floating_point.png
  
-7.1.2	Operaciones entre Enteros y Reales
+Operaciones entre Enteros y Reales
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 7.1.2.1	Multiplicación
 
-dem_clip3 * 1.25 = rastercalc2
+  dem_clip3 * 1.25 = rastercalc2
+
 Donde:
-dem_clip3: continuous, signed integer, 16bits
-rastercalc2: continuous, floating point, 32bits
+
+  dem_clip3:    continuous, signed integer, 16bits
+
+  rastercalc2:  continuous, floating point, 32bits
  
 dem_clip3 * Feature_area1 = restarcalc3
 Donde:
@@ -219,17 +243,26 @@ Remember, any image using a color palette is categorical.  USGS topographic maps
 
  
 
-8	NoData
+NoData
+======
+
 El valor NoData es un valor especial que describe que no hay data en la celda.
 Las operaciones que tienen como entrada NoData retornan no data.
 NoData *2 = NoData
+
 Bibibliografia
+==============
+
 http://docutils.sourceforge.net/docs/user/rst/quickref.html
+
+http://rst2pdf.googlecode.com/svn/trunk/doc/manual.txt
+
 Apéndice A	Fuentes de Datos
+
 Smithsonian http://mapserver.stri.si.edu/v2/catalog 
+
 Apéndice B	Crear un Raster a partir de un Poligono
 
- 
 
  
 
