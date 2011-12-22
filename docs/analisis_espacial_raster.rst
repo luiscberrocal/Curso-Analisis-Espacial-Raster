@@ -79,17 +79,19 @@ Criterios De Evaluación
 -----------------------
 
 2 Exámenes Parciales (15% cada uno)                          30%
-Trabajos grupales                                                         20%
+Trabajos grupales                                            20%
 Estudios de casos, Investigaciones, Tareas                   20%
-Proyecto Final                                                               30%
-Total                                                                             100%
+Proyecto Final                                               30%
+Total                                                       100%
 
 Bibliografía Básica
 -------------------
 
-GIS Modeling in Raster, Michael DeMers, John Wiley & Sons, 2002.
-Exploring spatial analysis in geographic information systems, Yue-Hong Chou, OnWord Press, 1997.
-The Handbook of Geographic Information Science, Nicholas J. Tate, Peter F. Fisher, David J. Martin, Blackwell Publishing, 2008.
+* GIS Modeling in Raster, Michael DeMers, John Wiley & Sons, 2002.
+
+* Exploring spatial analysis in geographic information systems, Yue-Hong Chou, OnWord Press, 1997.
+
+* The Handbook of Geographic Information Science, Nicholas J. Tate, Peter F. Fisher, David J. Martin, Blackwell Publishing, 2008.
 
 ¿Qué es el formato RASTER?
 ==========================
@@ -139,25 +141,24 @@ Ventajas y Desventajas de los Modelos Raster
 
   * Pendientes fuertes = Pendiente > 15
 
-.. image:: images/slope.png
+.. image:: images/slope15.png
 
 .. [#] http://www.quantdec.com/SYSEN597/GTKAV/section9/map_algebra.htm
 
 Problemas de Representación
 ---------------------------
 
+Que ocurre cuando se realizan operaciones entre temas Raster que tienen diferentes tamaños de celdas.
+
 .. image:: images/grid_01.gif
 
 .. image:: images/grid_02.gif
+
 
 .. image:: images/grid_03.gif
 
 .. image:: images/grid_04.gif
 
-
-Que ocurre cuando se realizan operaciones entre temas Raster que tienen diferentes tamaños de celdas.
-   
- 
 Para realizar la operación es necesario aplicar un proceso previo que se conoce como remuestreo (resampling).
 
 Nearest-neighbor interpolation
@@ -206,7 +207,8 @@ Reales (decimales)
 Operaciones entre Enteros y Reales
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-7.1.2.1	Multiplicación
+Multiplicación
+**************
 
   dem_clip3 * 1.25 = rastercalc2
 
@@ -216,32 +218,35 @@ Donde:
 
   rastercalc2:  continuous, floating point, 32bits
  
-dem_clip3 * Feature_area1 = restarcalc3
+  dem_clip3 * Feature_area1 = restarcalc3
 Donde:
-dem_clip3: continuous, signed integer, 16bits
-Feature_area1: continuous, unsigned integer, 8bits
-rastercalc3: continuous, signed integer, 32bits
-El resultado se ajusta al raster Feature_area1.
+  dem_clip3:     continuous, signed integer, 16bits
+
+  Feature_area1: continuous, unsigned integer, 8bits
+
+  rastercalc3:   continuous, signed integer, 32bits
+
+  El resultado   se ajusta al raster Feature_area1.
  
-dem_clip3 * rastercalc3 = restarcalc4
+  dem_clip3 * rastercalc3 = restarcalc4
+
 Donde:
-dem_clip3: continuous, signed integer, 16bits
-rastercalc3: continuous, floating point, 32bits
-rastercalc4: continuous, signed integer, 32bits
+  dem_clip3:   continuous, signed integer, 16bits
+  rastercalc3: continuous, floating point, 32bits
+  rastercalc4: continuous, signed integer, 32bits
+
 Perdida de precisión.
+
 El workaround es:
+
 Float("dem_clip3") * "rastercalc3" = rastercalc5
+
 rastercalc4: continuous, floating point, 32bits
 
 Make sure you only use nearest neighbor interpolation for grids with categorical data.  For these grids, interpolation has little or no meaning.  For example, if your grid uses a value of 0 for wetlands, 1 for desert, and 2 for urban land cover, then interpolating between wetlands (0) and urban land (2) can easily produce values near 1 (desert), which is ridiculous.
  
 Remember, any image using a color palette is categorical.  USGS topographic maps (so-called digital raster graphics, or DRGs) are typically represented this way. 
 
-
-
- 
-
- 
 
 NoData
 ======
