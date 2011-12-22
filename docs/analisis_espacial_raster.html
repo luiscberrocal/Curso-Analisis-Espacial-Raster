@@ -4,7 +4,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.9: http://docutils.sourceforge.net/" />
-<title>ANÁLISIS ESPACIAL – MODELO    RASTER</title>
+<title>ANÁLISIS ESPACIAL – MODELO    RASTER</title>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <style type="text/css">
 
 /*
@@ -279,6 +280,10 @@ li dd ul {
 </li>
 <li><a class="reference internal" href="#nodata" id="id29">7&nbsp;&nbsp;&nbsp;NoData</a></li>
 <li><a class="reference internal" href="#bibibliografia" id="id30">8&nbsp;&nbsp;&nbsp;Bibibliografia</a></li>
+<li><a class="reference internal" href="#como-actualizar-el-document-de-ayuda-tecnica" id="id31">9&nbsp;&nbsp;&nbsp;Como Actualizar el Document de Ayuda Técnica</a><ul class="auto-toc">
+<li><a class="reference internal" href="#referencias" id="id32">9.1&nbsp;&nbsp;&nbsp;Referencias</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="introduccion">
@@ -453,25 +458,32 @@ it generally performs poorly for numerical data.</p>
 <h3><a class="toc-backref" href="#id27">6.1.2&nbsp;&nbsp;&nbsp;Operaciones entre Enteros y Reales</a></h3>
 <div class="section" id="multiplicacion">
 <h4><a class="toc-backref" href="#id28">6.1.2.1&nbsp;&nbsp;&nbsp;Multiplicación</a></h4>
-<blockquote>
-dem_clip3 * 1.25 = rastercalc2</blockquote>
+<div class="math">
+\begin{equation*}
+\alpha _t(i) = P(O_1, O_2, \ldots  O_t, q_t = S_i \lambda )
+\end{equation*}
+</div>
+<div class="math">
+\begin{equation*}
+
+dem_clip3 * 1.25 = rastercalc2
+\end{equation*}
+</div>
 <p>Donde:</p>
 <blockquote>
 <p>dem_clip3:    continuous, signed integer, 16bits</p>
 <p>rastercalc2:  continuous, floating point, 32bits</p>
 <p>dem_clip3 * Feature_area1 = restarcalc3</p>
 </blockquote>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">analisis_espacial_raster.rst</tt>, line 222)</p>
-Block quote ends without a blank line; unexpected unindent.</div>
-<dl class="docutils">
-<dt>Donde:</dt>
-<dd><p class="first">dem_clip3:     continuous, signed integer, 16bits</p>
+<p>Donde:</p>
+<blockquote>
+<p>dem_clip3:     continuous, signed integer, 16bits</p>
 <p>Feature_area1: continuous, unsigned integer, 8bits</p>
 <p>rastercalc3:   continuous, signed integer, 32bits</p>
 <p>El resultado   se ajusta al raster Feature_area1.</p>
-<p class="last">dem_clip3 * rastercalc3 = restarcalc4</p>
-</dd>
+<p>dem_clip3 * rastercalc3 = restarcalc4</p>
+</blockquote>
+<dl class="docutils">
 <dt>Donde:</dt>
 <dd>dem_clip3:   continuous, signed integer, 16bits
 rastercalc3: continuous, floating point, 32bits
@@ -493,7 +505,7 @@ rastercalc4: continuous, signed integer, 32bits</dd>
 Las operaciones que tienen como entrada NoData retornan no data.
 NoData <a href="#id5"><span class="problematic" id="id6">*</span></a>2 = NoData</p>
 <div class="system-message" id="id5">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">analisis_espacial_raster.rst</tt>, line 254); <em><a href="#id6">backlink</a></em></p>
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">analisis_espacial_raster.rst</tt>, line 260); <em><a href="#id6">backlink</a></em></p>
 Inline emphasis start-string without end-string.</div>
 </div>
 <div class="section" id="bibibliografia">
@@ -511,6 +523,19 @@ Georeferenciar</p>
 <p>Cargar la imagen</p>
 <p>Haga zoom a área de trabajo</p>
 <p>Seleccione Fit to Display</p>
+</div>
+<div class="section" id="como-actualizar-el-document-de-ayuda-tecnica">
+<h1><a class="toc-backref" href="#id31">9&nbsp;&nbsp;&nbsp;Como Actualizar el Document de Ayuda Técnica</a></h1>
+<p>Abra los archivos con Notepad</p>
+<div class="section" id="referencias">
+<h2><a class="toc-backref" href="#id32">9.1&nbsp;&nbsp;&nbsp;Referencias</a></h2>
+<dl class="docutils">
+<dt>reStructuredText Directives</dt>
+<dd><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html">http://docutils.sourceforge.net/docs/ref/rst/directives.html</a></dd>
+<dt>Quick reStructuredText</dt>
+<dd><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html#internal-hyperlink-targets">http://docutils.sourceforge.net/docs/user/rst/quickref.html#internal-hyperlink-targets</a></dd>
+</dl>
+</div>
 </div>
 </div>
 </body>

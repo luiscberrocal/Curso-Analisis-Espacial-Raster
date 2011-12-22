@@ -219,7 +219,9 @@ Donde:
   rastercalc2:  continuous, floating point, 32bits
  
   dem_clip3 * Feature_area1 = restarcalc3
+
 Donde:
+
   dem_clip3:     continuous, signed integer, 16bits
 
   Feature_area1: continuous, unsigned integer, 8bits
@@ -290,3 +292,5 @@ Cargar la imagen
 Haga zoom a área de trabajo
  
 Seleccione Fit to Display
+
+.. include:: how-to-update-doc.rst
