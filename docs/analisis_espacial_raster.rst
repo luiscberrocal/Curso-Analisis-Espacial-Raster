@@ -1,7 +1,15 @@
 ﻿=====================================
-ANÁLISIS ESPACIAL – MODELO    RASTER 
+Análisis Espacial Raster
 =====================================
+
+.. |date| date::
+.. |time| date:: %H:%M
+
+
+
 :Autor: Ing. Luis Carlos Berrocal
+:Actualizado: |date| |time|
+
 
 .. contents::
 .. sectnum::
@@ -10,8 +18,16 @@ Introducción
 ============
 
 DENOMINACIÓN DEL CURSO: ANÁLISIS ESPACIAL – MODELO    RASTER 
-ABREVIATURA:    AER            CODIGO:    005            
-CREDITOS: 4       DURACIÓN: 1 MES        PREREQUISITO: AVG-004
+
+ABREVIATURA:    AER            
+
+CODIGO:    005            
+
+CREDITOS: 4       
+
+DURACIÓN: 1 MES        
+
+PREREQUISITO: AVG-004
 
 Descripción Del Curso
 ---------------------
@@ -78,11 +94,17 @@ Se trabajará de manera continúa con una herramienta bajo la coordinación de u
 Criterios De Evaluación
 -----------------------
 
-2 Exámenes Parciales (15% cada uno)                          30%
-Trabajos grupales                                            20%
-Estudios de casos, Investigaciones, Tareas                   20%
-Proyecto Final                                               30%
-Total                                                       100%
++----------------------------------------------------+-----------+
+|2 Exámenes Parciales (15% cada uno)                 |        30%|
++----------------------------------------------------+-----------+
+|Trabajos grupales                                   |        20%|
++----------------------------------------------------+-----------+
+|Estudios de casos, Investigaciones, Tareas          |        20%|
++----------------------------------------------------+-----------+
+|Proyecto Final                                      |        30%|
++----------------------------------------------------+-----------+
+|Total                                               |       100%|
++----------------------------------------------------+-----------+
 
 Bibliografía Básica
 -------------------
@@ -171,7 +193,11 @@ it generally performs poorly for numerical data.
 Bilinear Interpolation 
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Uses the four blue values surrounding the center of each yellow cell.  By translating and rescaling the coordinates, which will not change the interpolation, we may suppose the yellow square is centered at (x, y) and the centers of the surrounding blue cells are located at (0,0), (1,0), (0,1), and (1,1), where they have values Z00, Z10, Z01, and Z11, respectively.
+Uses the four blue values surrounding the center of each yellow cell.  By translating and rescaling the coordinates, which will not
+change the interpolation, we may suppose the yellow square is centered at (x, y) and the centers of the surrounding blue cells are 
+located at (0,0), (1,0), (0,1), and (1,1), where they have values Z00, Z10, Z01, and Z11, respectively.
+
+.. Comentario: Revisar e investigar más.
 
 Cubic Convolution 
 ~~~~~~~~~~~~~~~~~
@@ -228,16 +254,23 @@ Donde:
 
   rastercalc3:   continuous, signed integer, 32bits
 
-  El resultado   se ajusta al raster Feature_area1.
- 
+El resultado se ajusta al raster Feature_area1.
+
+.. image:: images/rastercalc3.png
+   :width: 750px
+..
+  
   dem_clip3 * rastercalc3 = restarcalc4
 
 Donde:
   dem_clip3:   continuous, signed integer, 16bits
+
   rastercalc3: continuous, floating point, 32bits
+
   rastercalc4: continuous, signed integer, 32bits
 
-Perdida de precisión.
+.. caution::
+   En esta operación hay perdida de precision. El resultado es entero en vez de Floating Point.
 
 El workaround es:
 
@@ -255,7 +288,8 @@ NoData
 
 El valor NoData es un valor especial que describe que no hay data en la celda.
 Las operaciones que tienen como entrada NoData retornan no data.
-NoData *2 = NoData
+
+  NoData * 2 = NoData
 
 Bibibliografia
 ==============
