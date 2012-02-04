@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="analisis-raster" basedir="." default="zip">
+    
+        <property environment="env" />
+        <tstamp>
+            <format property="operation.date" pattern="yyyyMMdd"/>
+        </tstamp>
+        <tstamp>
+            <format property="operation.time" pattern="HHmm"/>
+        </tstamp>       
+    
+  
+    <target name="zip">
+        <propertyfile file="zip.properties" comment="Server properties for ${migration.dir.suffix}">            
+            <entry key="program.BUILDDATE" type="date" value="now" pattern="yyyyMMdd-HHmmss" />
+            <entry key="program.BUILDHOST" value="${env.COMPUTERNAME}" />
+            <entry key="program.BUILDUSER" value="${user.name}" />
+        </propertyfile>
+        <zip destfile="../${ant.project.name}_${operation.date}_${operation.time}.zip">
+            <zipfileset dir="." prefix="${ant.project.name}">
+                <exclude name="**/Thumbs.db" />
+            </zipfileset>
+        </zip>
+    </target>
+    
+</project>

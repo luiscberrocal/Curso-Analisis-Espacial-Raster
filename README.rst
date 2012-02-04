@@ -1,0 +1,1 @@
+Este  repositorio es para darle apoyo a curso Análisis Espacial Raster.
