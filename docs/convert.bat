@@ -1,1 +1,2 @@
 C:\Python26\ArcGIS10.0\python.exe C:\Users\lberrocal\Downloads\DevTools\doctutils\docutils\docutils\tools\rst2html.py --stylesheet aeraster.css analisis_espacial_raster.rst analisis_espacial_raster.html
+#C:\Python26\ArcGIS10.0\python.exe C:\Users\lberrocal\Downloads\DevTools\doctutils\docutils\docutils\tools\rst2html.py --stylesheet aeraster.css definicion_area_estudio.rst definicion_area_estudio.html

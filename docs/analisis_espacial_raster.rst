@@ -29,6 +29,15 @@ DURACIÓN: 1 MES
 
 PREREQUISITO: AVG-004
 
+Clases
+------
+
+* Marzo 3, 2012
+* Marzo 10, 2012
+* Marzo 17, 2012
+* Marzo 24, 2012
+
+
 Descripción Del Curso
 ---------------------
 
@@ -40,34 +49,34 @@ desde las físico naturales hasta las desarrolladas por la acción humana. Los s
 Objetivos Generales
 -------------------
 
-Establecer las características de un sistema de información raster
-Seleccionar el tamaño de la celda más apropiado
-Rasterizar información digital en formato vectorial
-Definir las principales funciones de análisis 
-Conocer las potencialidades de los modelos digitales del terreno
-Desarrollar aplicaciones e formatos raster  
+#. Establecer las características de un sistema de información raster
+#. Seleccionar el tamaño de la celda más apropiado
+#. Rasterizar información digital en formato vectorial
+#. Definir las principales funciones de análisis 
+#. Conocer las potencialidades de los modelos digitales del terreno
+#. Desarrollar aplicaciones e formatos raster  
 
 Objetivos Específicos
 ---------------------
 
-Conocer las características de los SIG-raster 
-Explicar las principales herramientas analíticas que operan los sistemas
-Aplicar los sistemas raster en funciones de proximidad, distancia y barreras (costos)                               
-Aplicar los modelos digitales del terreno en la caracterización topográfica de terreno
-Aplicar  los modelos raster en las funciones hidrológicas y ambientales                                    
+#. Conocer las características de los SIG-raster 
+#. Explicar las principales herramientas analíticas que operan los sistemas
+#. Aplicar los sistemas raster en funciones de proximidad, distancia y barreras (costos)                               
+#. Aplicar los modelos digitales del terreno en la caracterización topográfica de terreno
+#. Aplicar  los modelos raster en las funciones hidrológicas y ambientales                                    
  
 Contenido
 ---------
 
-Características del formato raster
-Búsqueda  y recuperación de información de una base de datos geográfica raster
-Reclasificación de datos
-Superposición de mapas 
-Análisis de vecindad
-Modelos digitales del terreno
-Análisis de un modelo digital del terreno
-Aplicaciones topográficas y ambientales
-Desarrollo de un proyecto SIG-raster
+#. Características del formato raster
+#. Búsqueda  y recuperación de información de una base de datos geográfica raster
+#. Reclasificación de datos
+#. Superposición de mapas 
+#. Análisis de vecindad
+#. Modelos digitales del terreno
+#. Análisis de un modelo digital del terreno
+#. Aplicaciones topográficas y ambientales
+#. Desarrollo de un proyecto SIG-raster
  
 Estrategia Metodológica
 -----------------------
@@ -190,6 +199,11 @@ The simplest method, simply assigns to each yellow cell the value in the blue ce
 By not requiring any numerical computations, this method works for categorical data.  Because it does not really interpolate values, 
 it generally performs poorly for numerical data.
 
+Asegurese de utiliza la interpolación *nearest neighbor* cuando interpole datos categóricos. Para este tipo de grid la interpolacion no tiene
+significado ni validez. Por ejemploe si tiene un grid de cobertura con valores 0 para manglares,  1 para desiertos y 2 para urbano, la interporlacion entre
+manglares (0) y urbano (2) sería desiertos. Esto no tiene ningun sentido.
+
+
 Bilinear Interpolation 
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -274,13 +288,18 @@ Donde:
 
 El workaround es:
 
-Float("dem_clip3") * "rastercalc3" = rastercalc5
+  Float("dem_clip3") * "rastercalc3" = rastercalc5
 
-rastercalc4: continuous, floating point, 32bits
 
-Make sure you only use nearest neighbor interpolation for grids with categorical data.  For these grids, interpolation has little or no meaning.  For example, if your grid uses a value of 0 for wetlands, 1 for desert, and 2 for urban land cover, then interpolating between wetlands (0) and urban land (2) can easily produce values near 1 (desert), which is ridiculous.
- 
-Remember, any image using a color palette is categorical.  USGS topographic maps (so-called digital raster graphics, or DRGs) are typically represented this way. 
+Donde:
+  dem_clip3:   continuous, signed integer, 16bits
+
+  rastercalc3: continuous, floating point, 32bits
+
+  rastercalc4: continuous, floating point, 32bits
+
+
+
 
 
 NoData
@@ -291,40 +310,108 @@ Las operaciones que tienen como entrada NoData retornan no data.
 
   NoData * 2 = NoData
 
-Bibibliografia
-==============
+Referencias
+===========
 
 http://docutils.sourceforge.net/docs/user/rst/quickref.html
 
 http://rst2pdf.googlecode.com/svn/trunk/doc/manual.txt
 
-Apéndice A	Fuentes de Datos
+Apendices
+=========
 
-Smithsonian http://mapserver.stri.si.edu/v2/catalog 
+Fuentes de Datos
+----------------
 
-Apéndice B	Crear un Raster a partir de un Poligono
+	Smithsonian http://mapserver.stri.si.edu/v2/catalog 
 
 
- 
+Crear un Raster a partir de un Polígono
+---------------------------------------
 
- 
- 
-Apéndice C	Clip un Raster con un Polígono
- 
- 
-Apéndice D	Reproyeccion
- 
-Apéndice E	Recolectar Datos de Street Maps
-Capturar la Imagen
-Georeferenciar
- 
-Cargar la imagen
- 
- 
+
+.. image:: images/poligono_a_raster_01.png
+
+
+
+.. image:: images/poligono_a_raster_02.png
 
  
-Haga zoom a área de trabajo
  
-Seleccione Fit to Display
+ 
+Clip un Raster con un Polígono
+------------------------------
+
+
+.. image:: images/clip_raster_01.png
+
+
+.. image:: images/clip_raster_02.png
+
+Cuando se utiliza un poligon irregular la herramienta utiliza en el extent completo del poligono como se muestra
+
+.. image:: images/clip_raster_03.png
+
+
+
+Reproyeccion
+------------
+
+.. image:: images/reproject_01.png 
+
+
+
+Recolectar Datos de Street Maps
+-------------------------------
+
+#. Capturar la Imagen
+#. Georeferenciar
+
+   .. image:: images/collect_street_maps_01.png    
+ 
+#. Cargar la imagen
+
+   .. image:: images/collect_street_maps_02.png 
+ 
+   .. image:: images/collect_street_maps_03.png 
+
+   .. image:: images/collect_street_maps_04.png
+
+ 
+#. Haga zoom a área de trabajo
+
+   .. image:: images/collect_street_maps_05.png
+ 
+#. Seleccione **Fit to Display**
+
+   .. image:: images/collect_street_maps_06.png
+
+   El mapa se debe desplegar en el area mostrada:
+
+   .. image:: images/collect_street_maps_07.png
+
+
+#. Seleccione Add Control Points 
+
+   .. image:: images/collect_street_maps_08.png
+ 
+   Rectifique de la imagen al vector. Haga clic en la intersección en el raster y luego en la intersección en el vector.  
+   Agregue al menos 5 puntos.
+
+   Para ver la cantidad de puntos que tiene haga clic en el botón **View Link Table**
+
+   .. image:: images/collect_street_maps_09.png
+
+#. Cuando tiene la cantidad de puntos deseados y error cuadrático medio bajo.
+   En el toolbar Georeferencing seleccione **Georeferencing/Rectify...**
+
+   .. image:: images/collect_street_maps_10.png
+
+#. Seleccione el formato de salida deseado.
+
+   .. image:: images/collect_street_maps_11.png
+
+
+
 
 .. include:: how-to-update-doc.rst
